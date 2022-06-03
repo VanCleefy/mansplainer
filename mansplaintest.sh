@@ -7,7 +7,7 @@ usage() { echo "Usage: $0 	-s show template \"name of the template\" ex: Templat
 				"
 	1>&2; exit 1; }
 
-while getopts ":s:a:d:lt" o; do
+while getopts ":s:a:d:lt:" o; do
     case "${o}" in
         s)
 		clear
@@ -34,9 +34,10 @@ while getopts ":s:a:d:lt" o; do
 	    rm -rf ./templates/${d}
             ;;
         t)
-            echo "you chose -t option"
-	    echo ""
-	    find ./templates -type f -printf "%f\n" 
+		t=${OPTARG}
+#            echo "you chose -t option"
+	    echo "Search result:"
+	    find ./templates -type f -iname "*${t}*" -print
 	    #t=${OPTARG}
 	    #cp ./templates/Template.sol ./templates/Template-${a}.sol
             #vim ./templates/Template-${a}.sol
