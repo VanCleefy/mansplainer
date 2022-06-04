@@ -1,5 +1,6 @@
 #!/bin/bash
-
+#set -o verbose
+#echo all commands while running
 usage() { echo "Usage: $0 	-s show template \"name of the template\" ex: Template.sol 
 				-l list existing templates 
 				-a add a new template #using Template.sol as template for said template
@@ -11,9 +12,10 @@ while getopts ":s:a:d:lt:" o; do
     case "${o}" in
         s)
 		clear
+        echo ""
             s=${OPTARG}
 	    echo "####################################################################"
-            echo "      This is the ${s} template.    "
+        echo "#      This is the ${s} template.    "
 	    echo "####################################################################"
 
 	    echo "####################################################################"
@@ -35,10 +37,37 @@ while getopts ":s:a:d:lt:" o; do
             ;;
         t)
 		t=${OPTARG}
+
+        qfind=$(find ./templates -type f -iname "*${t}*" | wc -l) # -print
+        afind=$(find ./templates -type f -iname "*${t}*") 
 #            echo "you chose -t option"
-	    echo "Search result:"
-	    find ./templates -type f -iname "*${t}*" -print
-	    #t=${OPTARG}
+        #echo $qfind
+        if [ $qfind -le "1" ] 
+        then 
+            echo "####################################################################"
+            echo "#      This is the ${t} template.    "
+            echo "# - used with the -t option"
+	        echo "####################################################################"
+
+	        echo "####################################################################"
+
+            cat ${afind}
+
+            echo "####################################################################"
+
+        else
+             echo "Search result:"
+             for a in $afind
+             do
+                echo $a
+             done
+             echo "There are $qfind results."
+        fi
+	   
+	    
+	    #echo ""
+        #echo "${qfind}"
+        #t=${OPTARG}
 	    #cp ./templates/Template.sol ./templates/Template-${a}.sol
             #vim ./templates/Template-${a}.sol
             ;;
