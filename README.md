@@ -1,2 +1,0 @@
-# mansplainer
-Manual Explainer
