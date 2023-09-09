@@ -1,0 +1,25 @@
+case variable in
+    pattern1)
+        # Code to be executed if variable matches pattern1
+        ;;
+    pattern2)
+        # Code to be executed if variable matches pattern2
+        ;;
+    *)
+        # Code to be executed if variable doesn't match any pattern
+        ;;
+esac
+
+#And an example:
+
+case $day in
+    Monday)
+        echo "It's the start of the week"
+        ;;
+    Friday|Saturday)
+        echo "It's the weekend"
+        ;;
+    *)
+        echo "It's a weekday"
+        ;;
+esac

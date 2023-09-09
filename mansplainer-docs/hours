@@ -1,0 +1,19 @@
+{
+  "id": "cmpl-7pJ84gRbccxqEbS0wRpQ4ESmzZIhh",
+  "object": "text_completion",
+  "created": 1692462616,
+  "model": "davinci",
+  "choices": [
+    {
+      "text": "\n\nhas it a history?\n\nDoes now wallows\n\nin filth?\n\nA genuine mom and pop\n\ngas station from back in\n\nthe old days.\n\nThe skidrow all round\n\nwater",
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 7,
+    "completion_tokens": 50,
+    "total_tokens": 57
+  }
+}

@@ -1,0 +1,14 @@
+if [[ condition ]]; then
+    # Code to be executed if the condition is true
+else
+    # Code to be executed if the condition is false
+fi
+
+#And an example
+
+if [[ $x -gt 10 ]]; then
+    echo "x is greater than 10"
+else
+    echo "x is not greater than 10"
+fi
+

@@ -1,0 +1,9 @@
+for variable in value1 value2 value3; do
+    # Code to be executed for each value
+done
+
+#And an example:
+
+for fruit in apple banana orange; do
+    echo "I like $fruit"
+done
